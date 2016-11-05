@@ -9,4 +9,8 @@ router.get('/', function(req, res, next) {
   res.sendFile('index.html', { root: 'public' });
 });
 
+router.get('/questions', function(req,res) {
+	console.log("in questions");
+});
+
 module.exports = router;
