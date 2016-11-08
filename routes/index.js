@@ -31,9 +31,9 @@ router.post('/question', function(req, res, next) {
 });
 
 router.put('/answer/:id', function(req,res,next) {
-	console.log('putting answer: ' + req.body + ' in id: ' + req.params.id)
+	console.log('putting answer: ' + req.body['info'] + ' in id: ' + req.params.id)
 
-	Question.findAndModify({_id: req.params.id}, {$push: { answers: req.body} }, function(err, question) {
+	Question.findOneAndUpdate({_id: req.params.id}, {$push: { answers: req.body['info']} }, function(err, question) {
 		if (err) {return next(err);}
 		res.json(question);
 	});

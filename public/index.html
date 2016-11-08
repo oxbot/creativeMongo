@@ -20,7 +20,7 @@
 			{{question.message}} 
 			{{question.answers}}
 			<form ng-submit="answer(question._id)">
-				<input ng-model="question._id"/>
+				<input id={{question._id}}></input>
 				<button type="submit">Answer</button>
 			</form>
 			
