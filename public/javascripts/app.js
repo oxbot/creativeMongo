@@ -28,6 +28,13 @@ angular.module('app', [])
 			return $http.put('/answer/' + id, answer).success(function(data) {
 				//need to replace the question with the updated question in questions array
 				console.log(data);
+
+				for (var i = 0; i < $scope.questions.length; i++) {
+					var question = $scope.questions[i]
+					if (question._id === data._id)	{
+						$scope.questions[i].answers = data.answers
+					}
+				}
 			});
 		};
 		$scope.answer = function(id) {
