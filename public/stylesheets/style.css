@@ -6,3 +6,15 @@ body {
 a {
   color: #00B7FF;
 }
+
+.questions {
+	display: flex;
+	width: 75%;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+.question-box {
+	width: 50%;
+	flex-basis: 50%;
+	
+}
