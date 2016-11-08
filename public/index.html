@@ -9,11 +9,22 @@
 	<body ng-app="app">
 
 		<h1>Questions and Answers</h1>
-	
 		<div ng-controller="questions">
-			<ul>
-				<li ng-repeat="question in questions">{{question}}</li>
-			</ul>
+	
+		<form ng-submit="addQuestion()" >
+			<input ng-model="formContent"></input>
+			<button type="submit">Ask Question</button>
+		</form>
+
+		<div ng-repeat="question in questions">
+			{{question.message}} 
+			{{question.answers}}
+			<form ng-submit="answer(question._id)">
+				<input ng-model="question._id"/>
+				<button type="submit">Answer</button>
+			</form>
+			
+		</div>
 		</div>
 	</body>
 
