@@ -27,7 +27,7 @@ angular.module('app', [])
 			console.log(answer + "here")
 			return $http.put('/answer/' + id, answer).success(function(data) {
 				//need to replace the question with the updated question in questions array
-				console.log("after adding answer: " + data);
+				console.log(data);
 			});
 		};
 		$scope.answer = function(id) {
