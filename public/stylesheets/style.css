@@ -12,9 +12,14 @@ a {
 	width: 75%;
 	flex-wrap: wrap;
 	flex-direction: row;
+	float: left;
 }
 .question-box {
 	width: 50%;
 	flex-basis: 50%;
 	
+}
+.ask-question {
+	float:left;
+	width:20%;
 }

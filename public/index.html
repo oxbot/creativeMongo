@@ -11,10 +11,6 @@
 		<h1>Questions and Answers</h1>
 		<div ng-controller="questions">
 	
-		<form ng-submit="addQuestion()" >
-			<input ng-model="formContent"></input>
-			<button type="submit">Ask Question</button>
-		</form>
 		<div class ="questions">
 			<div ng-repeat="question in questions">
 			
@@ -32,6 +28,11 @@
 			
 			</div>
 		</div>
+
+		<form class="ask-question" ng-submit="addQuestion()">
+			<input ng-model="formContent"></input>
+			<button type="submit">Ask Question</button>
+		</form>
 		</div>
 	</body>
 
