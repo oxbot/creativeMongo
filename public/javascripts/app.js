@@ -75,5 +75,18 @@ angular.module('app', [])
 			});
 		}
 
+		$scope.clearAll = function()
+		{
+
+			return $http({
+				method : "DELETE",
+				url : "/clear",
+				headers: {'Content-Type': 'application/json;charset=utf-8'}
+			}).success(function(data) {
+				console.log(data);
+				$scope.getAll();
+			});
+		}
+
 
 	}]);

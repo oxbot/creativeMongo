@@ -67,5 +67,18 @@ Question.remove({_id: req.body._id}, function(err) {
 
 });
 
+router.delete('/clear', function(req, res, next) {
+console.log("In the clear route");
+Question.remove({}, function(err) {
+            if (err) {
+                console.log(err)
+            } else {
+                res.end('success');
+            }
+        }
+    );
+
+});
+
 
 module.exports = router;
