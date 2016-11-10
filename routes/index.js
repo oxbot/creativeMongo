@@ -39,4 +39,33 @@ router.put('/answer/:id', function(req,res,next) {
 	});
 });
 
+router.delete('/answer', function(req, res, next) {
+console.log("In the delete route");
+console.log(req.body);
+Question.update({_id: req.body._id}, {$pull: { answers: req.body.answers} }, {multi : false} , function(err) {
+            if (err) {
+                console.log(err)
+            } else {
+                res.end('success');
+            }
+        }
+    );
+
+});
+
+router.delete('/question', function(req, res, next) {
+console.log("In the delete route");
+console.log(req.body);
+Question.remove({_id: req.body._id}, function(err) {
+            if (err) {
+                console.log(err)
+            } else {
+                res.end('success');
+            }
+        }
+    );
+
+});
+
+
 module.exports = router;

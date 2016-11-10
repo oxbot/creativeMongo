@@ -8,17 +8,18 @@
 	</head>
 	<body ng-app="app" class="container">
 
-		<h1>Questions and Answers</h1>
+		<h1>-Questions & Answers-</h1>
 		<div ng-controller="questions">
 	
 		<div class ="questions">
 			<div ng-repeat="question in questions">
 			
 				<div class="question-box">
-					<h3>{{question.message}}</h3> 
+					<h3><button class="deleteButton" ng-click="deleteQuestion(question._id)">X</button>
+					{{question.message}}</h3> 
 				
-					<p ng-repeat="answer in question.answers">
-						{{answer}}
+					<p ng-repeat="answer in question.answers" class="answers">
+						<button class="deleteButton" ng-click="deleteAnswer(question._id,answer)">X</button> {{answer}}
 					</p>
 					<form ng-submit="answer(question._id)">
 						<input id={{question._id}}></input>

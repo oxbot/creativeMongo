@@ -1,10 +1,29 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #00eeff;
+  font-weight: bold;
 }
 
 a {
   color: #00B7FF;
+}
+
+h1 {
+	font-size: 48px;
+	text-shadow: 0px 2px #11aadd;
+	margin: auto;
+	text-align: center;
+}
+
+h3 {
+	font-size: 24px;
+	color: #9100ff;
+	font-weight: bold;
+}
+
+.answers {
+
 }
 
 .questions {
@@ -13,13 +32,52 @@ a {
 	flex-wrap: wrap;
 	flex-direction: row;
 	float: left;
+
 }
 .question-box {
-	width: 50%;
+	margin: 10px;
+	padding: 5px;
+	padding-top: 2px;
+	padding-top: 2px;
 	flex-basis: 50%;
+	background-color: #eeff00;
+	border: 2px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 	
 }
 .ask-question {
 	float:left;
 	width:20%;
+}
+
+input
+{
+	margin: 2px;
+	color: black;
+	background-color: #ff1100;
+	border: none;
+	padding: 5px 5px;
+	border-radius: 5px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+
+button 
+{
+	margin: 2px;
+	background-color: #1100ff;
+	color: white;
+	border: none;
+	padding: 5px 5px;
+	border-radius: 5px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.deleteButton
+{
+	font-size: 10px;
+	padding: 1px;
+	margin: 0px;
+	border-radius: 25px;
 }

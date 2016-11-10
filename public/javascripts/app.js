@@ -44,4 +44,36 @@ angular.module('app', [])
 			$scope.addAnswer(id,{info: document.getElementById(id).value});
 			document.getElementById(id).value = "";
 		};
+
+		$scope.deleteAnswer = function(id, answer)
+		{
+			console.log(id, answer);
+
+			return $http({
+				method : "DELETE",
+				url : "/answer",
+				data : { _id: id, answers: answer },
+				headers: {'Content-Type': 'application/json;charset=utf-8'}
+			}).success(function(data) {
+				console.log(data);
+				$scope.getAll();
+			});
+		}
+
+		$scope.deleteQuestion = function(id)
+		{
+			console.log(id);
+
+			return $http({
+				method : "DELETE",
+				url : "/question",
+				data : { _id: id},
+				headers: {'Content-Type': 'application/json;charset=utf-8'}
+			}).success(function(data) {
+				console.log(data);
+				$scope.getAll();
+			});
+		}
+
+
 	}]);
